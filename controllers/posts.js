@@ -2,7 +2,15 @@ const Post = require('../models/post')
 
 module.exports = {
   index,
-  create
+  create,
+  viewPosts
+}
+
+function viewPosts(req, res) {
+  Post.findById(req.params.id)
+    .populate('images')
+    .then((post) => { res.json(post) })
+    .catch(err => { res.json(err) })
 }
 
 function create(req, res) {
