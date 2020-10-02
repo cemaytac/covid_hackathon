@@ -9,6 +9,7 @@ import "./App.css";
 import Invitation from "../../pages/Invitation/Invitation"
 import Welcome from "../../pages/Welcome/Welcome"
 import NeedSelection from "../../pages/NeedSelection/NeedSelection"
+import Offer from "../../pages/Offer/Offer"
 
 class App extends Component {
   state = {
@@ -87,6 +88,15 @@ class App extends Component {
           render={() => (
             user ?
               <NeedSelection />
+              :
+              <Redirect to="/login" />)}
+        />
+        <Route
+          exact
+          path="/offer"
+          render={() => (
+            user ?
+              <Offer />
               :
               <Redirect to="/login" />)}
         />
