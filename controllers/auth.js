@@ -1,4 +1,4 @@
-const User = require('../models/user');
+const User = require('../models/post');
 const jwt = require("jsonwebtoken");
 
 module.exports = {
@@ -14,7 +14,7 @@ async function signup(req, res) {
     const token = createJWT(user);
     res.json({ token });
   } catch (err) {
-    res.status(400).send({'err': err.errmsg});
+    res.status(400).send({ 'err': err.errmsg });
   }
 }
 

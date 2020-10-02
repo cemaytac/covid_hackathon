@@ -7,7 +7,9 @@ const userSchema = new mongoose.Schema({
   name: String,
   email: { type: String, required: true, lowercase: true, unique: true },
   password: String,
-  invite: String
+  invite: String,
+  organization: { type: Boolean, default: false },
+  type: String,
 }, {
   timestamps: true
 });
