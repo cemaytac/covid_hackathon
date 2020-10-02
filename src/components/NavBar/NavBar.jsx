@@ -11,8 +11,9 @@ const NavBar = ({ user, handleLogout }) => {
               <li><a href="/users" className="nav-link">Users</a></li>
               <li><a href="/invitation" className="nav-link">Invitation Page</a></li>
               <li><a href="/welcome" className="nav-link">Welcome</a></li>
-              <li><a href="/needselection" className="nav-link">Need Selection</a></li>
-              <li><a href="/offer" className="nav-link">Offer</a></li>
+              <li><a href="/viewposts" className="nav-link">View Posts</a></li>
+              <li><a href="/viewresponses" className="nav-link">View Responses</a></li>
+              <li><a href="/addpost" className="nav-link">Add A Post</a></li>
               <li><a href=" " className="nav-link" onClick={handleLogout}>Log Out</a></li>
             </ul>
           </div>

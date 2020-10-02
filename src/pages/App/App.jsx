@@ -8,8 +8,9 @@ import Users from "../Users/Users";
 import "./App.css";
 import Invitation from "../../pages/Invitation/Invitation"
 import Welcome from "../../pages/Welcome/Welcome"
-import NeedSelection from "../../pages/NeedSelection/NeedSelection"
-import Offer from "../../pages/Offer/Offer"
+import ViewPosts from "../../pages/ViewPosts/ViewPosts"
+import AddPost from "../../pages/AddPost/AddPost"
+import ViewResponses from "../../pages/ViewResponses/ViewResponses"
 
 class App extends Component {
   state = {
@@ -84,19 +85,32 @@ class App extends Component {
         />
         <Route
           exact
-          path="/needselection"
+          path="/viewposts"
           render={() => (
             user ?
-              <NeedSelection />
+              <ViewPosts />
               :
               <Redirect to="/login" />)}
         />
         <Route
           exact
-          path="/offer"
+          path="/addpost"
+          render={({ match, history }) => (
+            user ?
+              <AddPost
+                match={match}
+                history={history}
+                user={this.state.user}
+              />
+              :
+              <Redirect to="/login" />)}
+        />
+        <Route
+          exact
+          path="/viewresponses"
           render={() => (
             user ?
-              <Offer />
+              <ViewResponses />
               :
               <Redirect to="/login" />)}
         />
