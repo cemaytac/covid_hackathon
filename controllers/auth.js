@@ -1,4 +1,4 @@
-const User = require('../models/post');
+const User = require('../models/user');
 const jwt = require("jsonwebtoken");
 
 module.exports = {
@@ -8,6 +8,7 @@ module.exports = {
 
 async function signup(req, res) {
   const user = new User(req.body);
+  console.log(user)
   try {
     await user.save();
     // Be sure to first delete data that should not be in the token
