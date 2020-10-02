@@ -2,6 +2,7 @@ import tokenService from "./tokenService";
 const baseUrl = "/api/posts/";
 
 export function create(post) {
+  console.log('HELLO')
   return fetch(baseUrl, {
     method: "POST",
     headers: { 'content-type': 'application/json', 'Authorization': 'Bearer ' + tokenService.getToken() },

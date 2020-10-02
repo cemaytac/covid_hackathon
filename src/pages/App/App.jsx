@@ -96,7 +96,7 @@ class App extends Component {
           exact
           path="/addpost"
           render={({ match, history }) => (
-            user ?
+            authService.getUser() ?
               <AddPost
                 match={match}
                 history={history}
