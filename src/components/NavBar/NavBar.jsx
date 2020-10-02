@@ -1,42 +1,34 @@
 import React from 'react';
+import Navbar from 'react-bootstrap/Navbar'
+import Nav from 'react-bootstrap/Nav'
 
 const NavBar = ({ user, handleLogout }) => {
   return (
     <>
       {user ?
-        <nav>
-          <div className="nav-wrapper">
-            <ul id="nav-mobile" className="right">
-              {user.organization ?
-                <>
-                  <li><a href=" " className="nav-link">Welcome, {user.name}</a></li>
-                  <li><a href="/invitation" className="nav-link">Invitation Page</a></li>
-                  <li><a href="/viewresponses" className="nav-link">View Responses</a></li>
-                  <li><a href="/addpost" className="nav-link">Add A Post</a></li>
-                  <li><a href=" " className="nav-link" onClick={handleLogout}>Log Out</a></li>
-                </>
-                :
-                <>
-                  <li><a href=" " className="nav-link">Welcome, {user.name}</a></li>
-                  {/* <li><a href="/users" className="nav-link">Users</a></li> */}
-                  <li><a href="/welcome" className="nav-link">Welcome</a></li>
-                  <li><a href="/viewposts" className="nav-link">View Posts</a></li>
-                  <li><a href=" " className="nav-link" onClick={handleLogout}>Log Out</a></li>
-                </>
-              }
-            </ul>
-          </div>
-        </nav>
+        <Navbar className='nav'>
+          {user.organization ?
+            <>
+              <Nav.Link href=" " >Welcome, {user.name}</Nav.Link>
+              <Nav.Link href="/invitation" >Invitation Page</Nav.Link>
+              <Nav.Link href="/viewresponses" >View Responses</Nav.Link>
+              <Nav.Link href="/addpost" >Add A Post</Nav.Link >
+              <Nav.Link href=" " onClick={handleLogout}>Log Out</Nav.Link >
+            </>
+            :
+            <>
+              <Nav.Link href=" " >Welcome, {user.name}</Nav.Link>
+              <Nav.Link href="/welcome" >Welcome</Nav.Link >
+              <Nav.Link href="/viewposts" >View Posts</Nav.Link >
+              <Nav.Link href=" " onClick={handleLogout}>Log Out</Nav.Link >
+            </>
+          }
+        </Navbar >
         :
-        <nav>
-          <div className="nav-wrapper">
-            <ul id="nav-mobile" className="right">
-              <li><a href="/login" className="nav-link">Log In</a></li>
-              {/* <li><a href="/users" className="nav-link">Users</a></li> */}
-              <li><a href="/signup" className="nav-link">Sign Up</a></li>
-            </ul>
-          </div>
-        </nav>
+        <Navbar>
+          <Nav.Link href="/login" >Log In</Nav.Link>
+          <Nav.Link href="/signup" >Sign Up</Nav.Link>
+        </Navbar>
       }
     </>
   )

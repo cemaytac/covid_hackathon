@@ -1,3 +1,7 @@
+body {
+  background-color: #F4A862;
+}
+
 .Signup {
   display: flex;
   flex-flow: column nowrap;

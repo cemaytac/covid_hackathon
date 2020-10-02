@@ -1,3 +1,7 @@
+body {
+  background-color: #F2C94C;
+}
+
 .LoginPage {
   display: flex;
   flex-flow: column nowrap;
