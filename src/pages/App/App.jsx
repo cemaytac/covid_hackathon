@@ -86,9 +86,11 @@ class App extends Component {
         <Route
           exact
           path="/viewposts"
-          render={() => (
+          render={({ match }) => (
             user ?
-              <ViewPosts />
+              <ViewPosts
+                match={match}
+              />
               :
               <Redirect to="/login" />)}
         />
