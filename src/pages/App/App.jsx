@@ -8,6 +8,7 @@ import Users from "../Users/Users";
 import "./App.css";
 import Invitation from "../../pages/Invitation/Invitation"
 import Welcome from "../../pages/Welcome/Welcome"
+import NeedSelection from "../../pages/NeedSelection/NeedSelection"
 
 class App extends Component {
   state = {
@@ -77,6 +78,15 @@ class App extends Component {
           render={() => (
             user ?
               <Invitation />
+              :
+              <Redirect to="/login" />)}
+        />
+        <Route
+          exact
+          path="/needselection"
+          render={() => (
+            user ?
+              <NeedSelection />
               :
               <Redirect to="/login" />)}
         />
