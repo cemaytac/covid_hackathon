@@ -6,6 +6,7 @@ import Login from "../Login/Login";
 import authService from "../../services/authService";
 import Users from "../Users/Users";
 import "./App.css";
+import InvitationPage from "../../pages/Invitation_Page/Invitation_Page"
 
 class App extends Component {
   state = {
@@ -22,7 +23,7 @@ class App extends Component {
   };
 
   render() {
-    const {user} = this.state
+    const { user } = this.state
     return (
       <>
         <NavBar user={user} handleLogout={this.handleLogout} />
@@ -59,6 +60,15 @@ class App extends Component {
           exact
           path="/users"
           render={() => (user ? <Users /> : <Redirect to="/login" />)}
+        />
+        <Route
+          exact
+          path="/invitation"
+          render={() => (
+            user ?
+              <InvitationPage />
+              :
+              <Redirect to="/login" />)}
         />
       </>
     );
