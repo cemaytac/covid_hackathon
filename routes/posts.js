@@ -1,8 +1,8 @@
 const router = require('express').Router();
-const offersCtrl = require('../controllers/offers')
+const postsCtrl = require('../controllers/posts')
 
 // Public Routes
-router.get('/', offersCtrl.index);
+router.get('/', postsCtrl.index);
 
 // Protected Routes
 router.use(require('../config/auth'));
