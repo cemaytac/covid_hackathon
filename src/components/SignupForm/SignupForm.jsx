@@ -8,7 +8,8 @@ class SignupForm extends Component {
     email: "",
     password: "",
     passwordConf: "",
-    invite: ""
+    invite: "",
+    zipcode: '',
   };
 
   handleChange = (e) => {
@@ -32,12 +33,16 @@ class SignupForm extends Component {
   };
 
   isFormInvalid() {
-    const { name, email, password, passwordConf } = this.state;
-    return !(name && email && password === passwordConf);
+    const { name, email, password, passwordConf,
+      // invite,
+      zipcode } = this.state;
+    return !(name && email && password === passwordConf) && zipcode;
   }
 
   render() {
-    const { name, email, password, passwordConf, invite } = this.state;
+    const { name, email, password, passwordConf,
+      // invite,
+      zipcode } = this.state;
     return (
       <div>
         <h3>Sign Up</h3>
@@ -78,7 +83,7 @@ class SignupForm extends Component {
             onChange={this.handleChange}
           />
           <label htmlFor="confirm">Confirm Password</label>
-          <input
+          {/* <input
             type="password"
             autoComplete="off"
             id="invite"
@@ -86,7 +91,16 @@ class SignupForm extends Component {
             name="invite"
             onChange={this.handleChange}
           />
-          <label htmlFor="invite">Invitation Code</label>
+          <label htmlFor="invite">Invite</label> */}
+          <input
+            type="text"
+            autoComplete="off"
+            id="zipcode"
+            value={zipcode}
+            name="zipcode"
+            onChange={this.handleChange}
+          />
+          <label htmlFor="zipcode">Zip Code</label>
           <button disabled={this.isFormInvalid()}>Sign Up</button>
           &nbsp;&nbsp;
           <Link to="/">Cancel</Link>
