@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-class InvitationPage extends Component {
+class Invitation extends Component {
     state = {}
     render() {
         return (
@@ -20,4 +20,4 @@ class InvitationPage extends Component {
     }
 }
 
-export default InvitationPage;
+export default Invitation;

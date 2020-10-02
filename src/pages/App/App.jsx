@@ -6,7 +6,8 @@ import Login from "../Login/Login";
 import authService from "../../services/authService";
 import Users from "../Users/Users";
 import "./App.css";
-import InvitationPage from "../../pages/Invitation_Page/Invitation_Page"
+import Invitation from "../../pages/Invitation/Invitation"
+import Welcome from "../../pages/Welcome/Welcome"
 
 class App extends Component {
   state = {
@@ -63,10 +64,19 @@ class App extends Component {
         />
         <Route
           exact
+          path="/welcome"
+          render={() => (
+            user ?
+              <Welcome />
+              :
+              <Redirect to="/login" />)}
+        />
+        <Route
+          exact
           path="/invitation"
           render={() => (
             user ?
-              <InvitationPage />
+              <Invitation />
               :
               <Redirect to="/login" />)}
         />
