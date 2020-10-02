@@ -2,11 +2,11 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const postSchema = new mongoose.Schema({
-  name: String,
-  user: { type: Schema.Types.ObjectId, ref: 'User' },
-  claimed: [{ type: Schema.Types.ObjectId, ref: 'User' }],
   title: String,
+  owner: { type: Schema.Types.ObjectId, ref: 'User' },
+  claimed: { type: Schema.Types.ObjectId, ref: 'User' },
   body: String,
+  type: String,
   image: String
 }, {
   timestamps: true

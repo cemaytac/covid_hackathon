@@ -9,7 +9,7 @@ const userSchema = new mongoose.Schema({
   password: String,
   invite: String,
   organization: { type: Boolean, default: false },
-  type: String,
+  zipcode: Number,
 }, {
   timestamps: true
 });
